@@ -145,7 +145,7 @@ do {
 
             $cartaEscolhida = $baralhoDoModo[$escolha - 1]; //pq escolha - 1? pq a carta esta como $i + 1 e isso nao mostra a sua real posicao no array entao para o usuario conseguir acessar com exatidao, subtraimos um para que seja a real posicao no array
 
-            if ($cartaEscolhida->getNumero() === $cartaSorteada->getNumero() && $cartaEscolhida->getNaipe() === $cartaSorteada->getNaipe()) {
+            if ($cartaEscolhida->getNumero() == $cartaSorteada->getNumero() && $cartaEscolhida->getNaipe() == $cartaSorteada->getNaipe()) {
                 echo "\nVocê acertou uma carta: " . $cartaSorteada->getNome() . " de " . $cartaSorteada->getNaipe() . "!!\n";
                 $acertos++;
                 echo "Você já acertou $acertos de $acertosNecessarios cartas!\n";
@@ -166,7 +166,7 @@ do {
                 // dps de 6 erros o usuario tem a opcao de desistir
                 if ($tentativas == 6) {
                     $resposta = readline("Você fez 6 tentativas! Deseja desistir? (Digite 'sim' para desistir ou 'não' para continuar): ");
-                    if (strtolower($resposta) === 'sim') { //strtolower serve para deixar todos os caracteres da string em minusculo, assim poupando tempo de criar todas as possiveis possibilidades de sim - Sim, SIM, sIm, SIm, etc..
+                    if (strtolower($resposta) == 'sim') { //strtolower serve para deixar todos os caracteres da string em minusculo, assim poupando tempo de criar todas as possiveis possibilidades de sim - Sim, SIM, sIm, SIm, etc..
                         echo "Você desistiu do jogo!\n";
                         break 2; //Sai do jogo completamente
                     }
